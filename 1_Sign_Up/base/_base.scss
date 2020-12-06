@@ -4,9 +4,16 @@
   box-sizing: border-box;
 }
 body{
+  font-size: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: black;
+  background: black !important;
+}
+.success{
+  color: green;
+}
+.error{
+  color: red;
 }

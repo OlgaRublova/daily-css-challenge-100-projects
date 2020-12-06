@@ -1,21 +1,41 @@
 .box {
-  height: 70vh;
-  width: 80vw;
+  min-height: 70vh;
+  min-width: 80vw;
   box-shadow: 0 0 3px white;
-  background: whitesmoke;
-  display: flex;
-  font-family: sans-serif; }
+  background: white;
+  font-family: sans-serif;
+  display: flex; }
+  @media (max-width: 37.5em) {
+    .box {
+      flex-direction: column;
+      height: 100%;
+      width: 100%; } }
+  @media (max-width: 56.25em) {
+    .box {
+      flex-direction: column;
+      height: 100%;
+      width: 100%; } }
+  @media (min-width: 112.5em) {
+    .box {
+      max-height: 80vh;
+      width: 80vw;
+      overflow: hidden; } }
   .box__text {
     width: 50%;
     height: 100%;
-    padding: 2rem 3rem;
+    padding: 2rem 3rem 0 3rem;
     display: flex;
     flex-direction: column;
     align-items: center; }
+    @media (max-width: 37.5em) {
+      .box__text {
+        width: 100%; } }
+    @media (max-width: 56.25em) {
+      .box__text {
+        width: 100%; } }
     .box__text .box__heading {
       width: 100%;
       height: 15%;
-      background-color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -36,6 +56,9 @@
           width: 100%;
           display: flex;
           flex-direction: column; }
+          @media (min-width: 112.5em) {
+            .box__text .box__form form .form__field {
+              margin-top: 1.5rem; } }
           .box__text .box__form form .form__field:nth-of-type(3) input {
             color: crimson; }
           .box__text .box__form form .form__field:nth-of-type(4) {
@@ -45,7 +68,7 @@
             padding: 0 1rem;
             margin: 1rem 0; }
             .box__text .box__form form .form__field:nth-of-type(4) button {
-              width: 35%;
+              width: 10rem;
               border-radius: 30px;
               color: white;
               font-size: 1rem;
@@ -63,8 +86,7 @@
           .box__text .box__form form .form__field:nth-of-type(5) {
             flex-direction: row;
             justify-content: space-between;
-            align-items: center;
-            margin-top: 2rem; }
+            align-items: center; }
             .box__text .box__form form .form__field:nth-of-type(5) p {
               color: black;
               font-size: 1.5rem;
@@ -115,13 +137,20 @@
             letter-spacing: 1px; }
           .box__text .box__form form .form__field .icon-chevron-sign-down {
             position: absolute;
-            top: 52%;
+            top: 4rem;
             right: 5%;
-            font-size: 2rem;
-            color: green; }
+            font-size: 2rem; }
   .box__img {
     width: 50%;
     height: 100%; }
+    @media (max-width: 37.5em) {
+      .box__img {
+        width: 100%; } }
+    @media (max-width: 56.25em) {
+      .box__img {
+        width: 100%; }
+        .box__img img {
+          object-fit: contain; } }
     .box__img img {
       height: 100%;
       width: 100%;
@@ -133,10 +162,17 @@
   box-sizing: border-box; }
 
 body {
+  font-size: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: black; }
+  background: black !important; }
+
+.success {
+  color: green; }
+
+.error {
+  color: red; }
 
 /*# sourceMappingURL=style.css.map */

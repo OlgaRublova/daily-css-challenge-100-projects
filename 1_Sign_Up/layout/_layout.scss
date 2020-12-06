@@ -1,24 +1,43 @@
 .box {
-  height: 70vh;
-  width: 80vw;
+  min-height: 70vh;
+  min-width: 80vw;
   box-shadow: 0 0 3px rgba(255, 255, 255, 1);
-  background: whitesmoke;
-  display: flex;
+  background: white;
   font-family: sans-serif;
+  display: flex;
+
+  @include respond(phone) {
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  @include respond(tab-port) {
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  @include respond(big-desktop) {
+    max-height: 80vh;
+    width: 80vw;
+    overflow: hidden;
+  }
 
   &__text {
     width: 50%;
     height: 100%;
-    padding: 2rem 3rem;
+    padding: 2rem 3rem 0 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-
+    @include respond(phone) {
+      width: 100%;
+    }
+    @include respond(tab-port) {
+      width: 100%;
+    }
     .box__heading {
       width: 100%;
       height: 15%;
-      background-color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -41,23 +60,29 @@
 
       form {
         width: 100%;
+
         .form__field {
           position: relative;
           width: 100%;
           display: flex;
           flex-direction: column;
+          @include respond(big-desktop) {
+            margin-top: 1.5rem;
+          }
 
           &:nth-of-type(3) input {
             color: crimson;
           }
-          &:nth-of-type(4){
+
+          &:nth-of-type(4) {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
             padding: 0 1rem;
             margin: 1rem 0;
-            button{
-              width: 35%;
+
+            button {
+              width: 10rem;
               border-radius: 30px;
               color: white;
               font-size: 1rem;
@@ -68,32 +93,36 @@
               text-transform: uppercase;
               font-weight: 400;
             }
-            p{
+
+            p {
               color: gray;
               border-bottom: 2px solid crimson;
               width: max-content;
               padding: .2rem;
             }
           }
-          &:nth-of-type(5){
+
+          &:nth-of-type(5) {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            margin-top: 2rem;
-            p{
+
+            p {
               color: black;
               font-size: 1.5rem;
               font-weight: 600;
               margin-left: 1rem;
 
             }
-            .icons{
+
+            .icons {
               width: 30%;
               padding: 1rem 0;
               display: flex;
               justify-content: space-between;
               align-items: center;
-              &__icon{
+
+              &__icon {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -122,7 +151,6 @@
 
             &:focus {
               border-bottom: 2.5px solid gainsboro;
-
             }
 
             &::placeholder {
@@ -144,14 +172,13 @@
             letter-spacing: 1px;
           }
 
-          .icon-chevron-sign-down{
+          .icon-chevron-sign-down {
             position: absolute;
-            top:52%;
+            top: 4rem;
             right: 5%;
             font-size: 2rem;
-            color: green;
+            //color: green;
           }
-
         }
       }
     }
@@ -160,6 +187,15 @@
   &__img {
     width: 50%;
     height: 100%;
+    @include respond(phone) {
+      width: 100%;
+    }
+    @include respond(tab-port) {
+      width: 100%;
+      img {
+        object-fit: contain;
+      }
+    }
 
     img {
       height: 100%;
@@ -169,3 +205,4 @@
   }
 
 }
+
