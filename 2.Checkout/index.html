@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="card">
+    <div class="card__header">
+        <div class="card__header-logo">
+            <img src="images/img-logo-1.png" alt="">
+        </div>
+        <div class="card__header-heading">Payment <br> Details</div>
+    </div>
+    <div class="card__info">
+        <div class="field">
+            <label for="name">
+                <input type="text" name="name" id="name" placeholder="">
+                <span>card holder's name</span>
+            </label>
+        </div>
+        <div class="field">
+            <label for="ccn">
+                <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9]{13,19}" autocomplete="cc-number"
+                       maxlength="19" placeholder="">
+                <span>card number</span>
+            </label>
+            <label for="date">
+                <input type="text" name="date" id="date" placeholder="">
+                <span>exp date</span>
+            </label>
+        </div>
+        <div class="field">
+            <label for="cvv">
+                <input type="number" name="cvv" id="cvv" placeholder="">
+                <span>cvv</span>
+            </label>
+            <button>Complete Order</button>
+        </div>
+    </div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>

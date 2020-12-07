@@ -25,7 +25,6 @@ const showError = (input, message) => {
     formField.classList.remove('success');
     formField.classList.add('error');
 
-
     // show the error message
     const error = formField.querySelector('small');
     error.textContent = message;
